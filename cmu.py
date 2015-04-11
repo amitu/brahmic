@@ -5,7 +5,7 @@ cmu_dict = {}
 
 
 def populate_cmu():
-    for line in file("cmudict-0.7b.txt"):
+    for line in file("./cmudict/cmudict.dict"):
         if line[0] == ";":
             continue
         try:
