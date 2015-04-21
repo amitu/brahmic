@@ -26,15 +26,17 @@ hin_dict = """
 AA  odd     AA D      | ऑ
 AE  at  AE T          | ऐ
 AH  hut HH AH T       | ऽ
+AH0  hut HH AH T      | ए
+AH1  hut HH AH T      | आ
 AO  ought   AO T      | आ
 AW  cow K AW          | आव
 AY  hide    HH AY D   | आय
 B   be  B IY          | ब
 CH  cheese  CH IY Z   | च
 D   dee D IY          | ड
-DH  thee    DH IY     | ढ
+DH  thee    DH IY     | द
 EH  Ed  EH D          | ए
-ER  hurt    HH ER T   | अ
+ER  hurt    HH ER T   | र
 EY  ate EY T          | एऽ
 F   fee F IY          | फ
 G   green   G R IY N  | ग
@@ -56,7 +58,9 @@ SH  she SH IY         | श
 T   tea T IY          | ट
 TH  theta   TH EY T AH| थ
 UH  hood    HH UH D   | उ
-UW  two T UW          | वू
+UH  hood    HH UH D   | ऊ
+UW  two T UW          | उ
+UW1  two T UW         | ऊ
 V   vee V IY          | व
 W   we  W IY          | व
 Y   yield   Y IY L D  | य
@@ -70,13 +74,108 @@ hin_dict = dict(
 
 
 def trans_lookup(phoneme):
-    if phoneme[-1].isdigit():
-        phoneme = phoneme[:-1]
-    return hin_dict.get(phoneme, phoneme)
+    return hin_dict.get(phoneme, hin_dict.get(phoneme[:-1], phoneme))
+
+
+CONSONENTS = [
+    'ब',
+    'भ',
+    'ह',
+    'ङ',
+    'ग',
+    'घ',
+    'द',
+    'ध',
+    'ज',
+    'झ',
+    'ड',
+    'ढ',
+    'प',
+    'फ',
+    'र',
+    'ऱ',
+    'क',
+    'ख',
+    'त',
+    'थ',
+    'च',
+    'छ',
+    'ट',
+    'ठ',
+    'म',
+    'ण',
+    'न',
+    'ऩ',
+    'व',
+    'ऴ',
+    'ल',
+    'ळ',
+    'स',
+    'श',
+    'ष',
+    'य',
+    'य़',
+]
+
+HALF_CONSONENTS = [c + '्' for c in CONSONENTS]
+
+VOWELS = [
+    'अ',
+    'आ',
+    'इ',
+    'ई',
+    'उ',
+    'ऊ',
+    'ए',
+    'ऐ',
+    'ओ',
+    'औ',
+    'ऑ',
+]
+
+VOWELS_MATRA = {
+    'अ': '',
+    'आ': 'ा',
+    'इ': 'ि',
+    'ई': 'ी',
+    'उ': 'ु',
+    'ऊ': 'ू',
+    'ए': 'े',
+    'ऐ': 'ै',
+    'ओ': 'ो',
+    'औ': 'ौ',
+    'ऑ': 'ॉ',
+}
+
+
+def is_vowel(l):
+    # print l, l in VOWELS
+    return l in VOWELS
+
+
+def is_consonent(l):
+    # print l, l in CONSONENTS, l in HALF_CONSONENTS
+    return l in CONSONENTS or l in HALF_CONSONENTS
+
+
+def add_vowel(c, v):
+    # print "add_vowel", c, v
+    if c in HALF_CONSONENTS:
+        c = c[:-1]
+    # print "add_vowel", c, v
+    return c+VOWELS_MATRA.get(v, v)
 
 
 def trans(cmu):
-    return "".join(trans_lookup(word) for word in cmu.split())
+    cmu = "".join(trans_lookup(m) for m in cmu.split())
+    hi = []
+    for i in range(len(cmu)):
+        l = trans_lookup(cmu[i])
+        if i > 0 and is_vowel(l) and is_consonent(hi[-1]):
+            hi[-1] = add_vowel(hi[-1], l)
+        else:
+            hi.append(l)
+    return "".join(hi)
 
 
 # while True:
