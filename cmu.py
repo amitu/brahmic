@@ -52,11 +52,11 @@ EH  Ed  EH D          | ए
 ER  hurt    HH ER T   | र
 EY  ate EY T          | एऽ
 F   fee F IY          | फ
-G   green   G R IY N  | ग् 
+G   green   G R IY N  | ग्
 HH  he  HH IY         | ह
 IH  it  IH T          | इ
 IY  eat IY T          | ई
-JH  gee JH IY         | ज् 
+JH  gee JH IY         | ज्
 K   key K IY          | क्
 L   lee L IY          | ल
 M   me  M IY          | म्
