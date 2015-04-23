@@ -22,16 +22,29 @@ def lookup(word):
     return cmu_dict.get(word, "unknown")
 
 
+"""
+Problem ones:
+just: JH AH1 S T => जास्ट
+but: B AH1 T => बाट
+
+
+The following should be there may be.
+
+IH1  it  IH T         | ईय
+
+"""
+
 hin_dict = """
 AA  odd     AA D      | ऑ
 AE  at  AE T          | ऐ
 AH  hut HH AH T       | ऽ
-AH0  hut HH AH T      | ए
+AH0  hut HH AH T      | ऐ
 AH1  hut HH AH T      | आ
 AO  ought   AO T      | आ
-AW  cow K AW          | आव
+AO1  ought   AO T     | ऑ
+AW  cow K AW          | आव्
 AY  hide    HH AY D   | आय
-B   be  B IY          | ब
+B   be  B IY          | ब्
 CH  cheese  CH IY Z   | च
 D   dee D IY          | ड
 DH  thee    DH IY     | द
@@ -39,23 +52,23 @@ EH  Ed  EH D          | ए
 ER  hurt    HH ER T   | र
 EY  ate EY T          | एऽ
 F   fee F IY          | फ
-G   green   G R IY N  | ग
+G   green   G R IY N  | ग् 
 HH  he  HH IY         | ह
 IH  it  IH T          | इ
 IY  eat IY T          | ई
-JH  gee JH IY         | ज
-K   key K IY          | क
+JH  gee JH IY         | ज् 
+K   key K IY          | क्
 L   lee L IY          | ल
-M   me  M IY          | म
-N   knee    N IY      | न
-NG  ping    P IH NG   | गं
+M   me  M IY          | म्
+N   knee    N IY      | न्
+NG  ping    P IH NG   | ंग्
 OW  oat OW T          | ओ
 OY  toy T OY          | ऑय
 P   pee P IY          | प
 R   read    R IY D    | र
-S   sea S IY          | स
+S   sea S IY          | स्
 SH  she SH IY         | श
-T   tea T IY          | ट
+T   tea T IY          | ट्
 TH  theta   TH EY T AH| थ
 UH  hood    HH UH D   | उ
 UH  hood    HH UH D   | ऊ
@@ -162,8 +175,16 @@ def add_vowel(c, v):
     # print "add_vowel", c, v
     if c in HALF_CONSONENTS:
         c = c[:-1]
-    # print "add_vowel", c, v
+    # print "add_vowel", c, v, c+VOWELS_MATRA.get(v, v)
     return c+VOWELS_MATRA.get(v, v)
+
+
+def getLastChar(hi):
+    if not hi:
+        return '', 0
+    if hi[-1] == "्" and len(hi) > 1:
+        return hi[-2], 2
+    return hi[-1], 1
 
 
 def trans(cmu):
@@ -171,11 +192,18 @@ def trans(cmu):
     hi = []
     for i in range(len(cmu)):
         l = trans_lookup(cmu[i])
-        if i > 0 and is_vowel(l) and is_consonent(hi[-1]):
-            hi[-1] = add_vowel(hi[-1], l)
+        p, ii = getLastChar(hi)
+        # print l, p, "hi", "".join(hi)
+        if i > 0 and is_vowel(l) and is_consonent(p):
+            if ii == 2:
+                hi.pop()
+            hi[-1] = add_vowel(p, l)
         else:
             hi.append(l)
-    return "".join(hi)
+    hi = "".join(hi)
+    if hi[-1] == "्":
+        hi = hi[:-1]
+    return hi
 
 
 # while True:
