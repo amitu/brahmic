@@ -1,7 +1,12 @@
 # coding=utf-8
 from __future__ import unicode_literals
 
+import re
+import string
+
 cmu_dict = {}
+WORD_REGEX = re.compile(r'\b[^\b]+?\b')
+WORDY = string.letters
 
 
 def populate_cmu():
@@ -206,11 +211,19 @@ def trans(cmu):
     return hi
 
 
-# while True:
-#     word = raw_input("word: ")
-#     cmu = lookup(word.lower())
-#     hin = trans(cmu)
-#     print "%s: %s => %s" % (word, cmu, hin)
+def replacer(match):
+    match = match.group()
+    if match[0] in WORDY:
+        cmu = lookup(match.lower())
+        candidate = trans(cmu)
+        if candidate != "unknown":
+            match = candidate
+    return match
+
+
+def trans_text(text):
+    return re.sub(WORD_REGEX, replacer, text)
+
 
 def main():
     import sys
