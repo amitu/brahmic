@@ -43,29 +43,29 @@ AH1  hut HH AH T      | आ
 AO  ought   AO T      | आ
 AO1  ought   AO T     | ऑ
 AW  cow K AW          | आव्
-AY  hide    HH AY D   | आय
+AY  hide    HH AY D   | आय्
 B   be  B IY          | ब्
 CH  cheese  CH IY Z   | च
-D   dee D IY          | ड
+D   dee D IY          | ड्
 DH  thee    DH IY     | द
 EH  Ed  EH D          | ए
-ER  hurt    HH ER T   | र
+ER  hurt    HH ER T   | र्
 EY  ate EY T          | एऽ
-F   fee F IY          | फ
+F   fee F IY          | फ्
 G   green   G R IY N  | ग्
 HH  he  HH IY         | ह
 IH  it  IH T          | इ
 IY  eat IY T          | ई
 JH  gee JH IY         | ज्
 K   key K IY          | क्
-L   lee L IY          | ल
+L   lee L IY          | ल्
 M   me  M IY          | म्
 N   knee    N IY      | न्
 NG  ping    P IH NG   | ंग्
 OW  oat OW T          | ओ
 OY  toy T OY          | ऑय
-P   pee P IY          | प
-R   read    R IY D    | र
+P   pee P IY          | प्
+R   read    R IY D    | र्
 S   sea S IY          | स्
 SH  she SH IY         | श
 T   tea T IY          | ट्
@@ -77,7 +77,7 @@ UW1  two T UW         | ऊ
 V   vee V IY          | व
 W   we  W IY          | व
 Y   yield   Y IY L D  | य
-Z   zee Z IY          | ज़
+Z   zee Z IY          | स्
 """
 
 hin_dict = dict(
