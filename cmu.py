@@ -74,9 +74,9 @@ UH  hood    HH UH D   | उ
 UH  hood    HH UH D   | ऊ
 UW  two T UW          | उ
 UW1  two T UW         | ऊ
-V   vee V IY          | व
+V   vee V IY          | व्
 W   we  W IY          | व
-Y   yield   Y IY L D  | य
+Y   yield   Y IY L D  | य्
 Z   zee Z IY          | स्
 """
 
