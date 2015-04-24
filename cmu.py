@@ -123,17 +123,15 @@ def trans(cmu):
     return hi
 
 
-def replacer(match):
-    match = match.group()
-    if match[0] in WORDY:
-        cmu = lookup(match.lower())
-        candidate = trans(cmu)
-        if candidate != "unknown":
-            match = candidate
-    return match
-
-
 def trans_text(text):
+    def replacer(match):
+        match = match.group()
+        if match[0] in WORDY:
+            cmu = lookup(match.lower())
+            candidate = trans(cmu)
+            if candidate != "unknown":
+                match = candidate
+        return match
     return re.sub(WORD_REGEX, replacer, text)
 
 
