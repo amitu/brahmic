@@ -1,4 +1,4 @@
-# Scriptic -- A Transliteration Tool
+# Scriptic - A Transliteration Tool
 
 This project is for accurate cross-script tranliteration. It contains a bunch of
 software, as well as dictionaries and other mappings that help in it.
@@ -47,7 +47,7 @@ but before that we need a basic transliteration library. And scriptic is an
 effort towards that.
 
 
-## Another Motivation -- Replace IPA with Devnagri
+## Another Motivation - Replace IPA with Devnagri
 
 Wikipedia uses
 [IPA](http://en.wikipedia.org/wiki/International_Phonetic_Alphabet), but IPA is
@@ -56,9 +56,9 @@ bigger set of sounds. Also nearly no one can fluently read IPA (try reading
 /ˈnjuːtən/, best of luck!), where as there are upwards of a 100 million who can
 read devnagri. So this project also aims to replace IPA and other similar
 schemes, eg the one used by [CMU](http://en.wikipedia.org/wiki/Arpabet)(try
-reading B AA1 R B ER0 Z), or the one [Google uses](https://ww
-w.dropbox.com/s/yu73fuf022psrq3/Screenshot%202015-04-20%2016.11.51.png?dl=0)(loo
-ks like Khuṇ k̄hxbkhuṇ).
+reading B AA1 R B ER0 Z), or the one [Google uses](https://ww w.dropbox.com/s/yu
+73fuf022psrq3/Screenshot%202015-04-20%2016.11.51.png?dl=0)(looks like Khuṇ
+k̄hxbkhuṇ).
 
 You see all these approaches are wrong. IPA, Arpabet, That Thing That Google
 Uses, they are all reinventing crap after crap. They can't agree with each
@@ -108,7 +108,7 @@ Any help with fixing cmu.py is highly appreciated too.
 
 ----
 
-# Scriptic -- ऐ Transliteration टूल
+# Scriptic - ऐ Transliteration टूल
 
 दिस प्रॉजेक्ट इस फॉर ऐक्य्रैट क्रॉस-स्क्रिप्ट tranliteration. इट कैन्टेऽन्स ऐ बान्च आव
 सॉफ्ट्वेर, ऐस वेल ऐस डिक्शैनेरीस ऐन्ड आदर mappings दैट हेल्प इन इट.
@@ -157,7 +157,7 @@ transliterate Telgu टेक्स्ट्स लाय्क वेब्स�
 एफ्र्ट टैवॉर्ड्स दैट.
 
 
-## ऐनादर मोटैवेऽशैन -- रीप्लेऽस IPA विद Devnagri
+## ऐनादर मोटैवेऽशैन - रीप्लेऽस IPA विद Devnagri
 
 विकीपीडीऐ यूसैस
 [IPA](http://एन.विकीपीडीऐ.ऑर्ग/विकी/International_Phonetic_Alphabet), बाट IPA इस
@@ -166,9 +166,9 @@ transliterate Telgu टेक्स्ट्स लाय्क वेब्स�
 /ˈnjuːटीəएन/, बेस्ट आव लाक!), वेर ऐस देर ऑर आप्वर्ड्स आव ऐ 100 मिल्यैन हू कैन
 रेड devnagri. सो दिस प्रॉजेक्ट ऑल्सो एऽम्स टू रीप्लेऽस IPA ऐन्ड आदर सिमैल्र
 स्कीम्स, eg दै वान यूस्ड बाय [सीएम्यू](http://एन.विकीपीडीऐ.ऑर्ग/विकी/Arpabet)(ट्राय
-रीडिंग बी AA1 ऑर बी ER0 सी), ऑर दै वान [गूगैल यूसैस](https://ww
-डाबैल्यु.dropbox.कॉम/एस/yu73fuf022psrq3/Screenshot%202015-04-20%2016.11.51.png?dl=0)(लू
-ks लाय्क Khuṇ केऽ̄hxbkhuṇ).
+रीडिंग बी AA1 ऑर बी ER0 सी), ऑर दै वान [गूगैल यूसैस](https://ww डाबैल्यु.dropbox.कॉम/एस/यू
+73fuf022psrq3/Screenshot%202015-04-20%2016.11.51.png?dl=0)(लूक्स लाय्क Khuṇ
+केऽ̄hxbkhuṇ).
 
 यू सी ऑल दीस ऐप्रोचैस ऑर रॉंग. IPA, Arpabet, दैट थिंग दैट गूगैल
 यूसैस, देऽ ऑर ऑल रीइन्वेन्टिंग क्रैप ऐफ्ट्र क्रैप. देऽ कैन'टी ऐग्री विद ईच
