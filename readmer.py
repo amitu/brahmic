@@ -1,6 +1,5 @@
 import cmu
 
-
 def main():
     readme = file("README.md").read().decode("utf-8")
     eng = readme.split("----")[0]
