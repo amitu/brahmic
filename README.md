@@ -1,4 +1,4 @@
-# Scriptic - A Transliteration Tool
+# ब्राह्मिक - A Transliteration Tool
 
 This project is for accurate cross-script tranliteration. It contains a bunch of
 software, as well as dictionaries and other mappings that help in it.
@@ -43,7 +43,7 @@ separate phases, she can focus on words/grammar and not worry about
 reading/writing in beginning.
 
 Eventual goal is to write a browser extension, which transliterates everything,
-but before that we need a basic transliteration library. And scriptic is an
+but before that we need a basic transliteration library. And ब्राह्मिक is an
 effort towards that.
 
 
@@ -74,8 +74,8 @@ scheme would work for them though. But that is an English centric world view,
 and the problem of "I can not pronounce English properly" is not a English
 speaking world problem, but a problem of people with non English as a native
 language. For them Google/IPA/Arpabet would be as hard as Devnagri, but at least
-for close to billion people, they already know Devnagri (or Telgu etc versions
-of them which this project supports).
+for close to billion people, they already know Devnagri (or some other [Brahmic
+Script](http://en.wikipedia.org/wiki/Brahmic_scripts)).
 
 May be world will never support, may be this will only make the job of Indians
 better, so what, that alone is a worthy goal.
@@ -85,7 +85,7 @@ better, so what, that alone is a worthy goal.
 
 Currently I am using [cmudict](https://github.com/cmusphinx/cmudict), which
 lists English pronounciation code for some 40-50K words. I am [mapping those
-codes to Devnagri](https://github.com/amitu/scriptic/blob/master/cmu.py#L25-L68).
+codes to Devnagri](https://github.com/amitu/brahmic/blob/master/cmu.py#L25-L68).
 
 
 
@@ -108,7 +108,7 @@ Any help with fixing cmu.py is highly appreciated too.
 
 ----
 
-# Scriptic - ऐ Transliteration टूल
+# ब्राह्मिक - ऐ Transliteration टूल
 
 दिस प्रॉजेक्ट इस फॉर ऐक्य्रैट क्रॉस-स्क्रिप्ट tranliteration. इट कैन्टेऽन्स ऐ बान्च आव
 सॉफ्ट्वेर, ऐस वेल ऐस डिक्शैनेरीस ऐन्ड आदर mappings दैट हेल्प इन इट.
@@ -153,7 +153,7 @@ transliterate Telgu टेक्स्ट्स लाय्क वेब्स�
 रीडिंग/राय्टिंग इन बिगिनिंग.
 
 ऐवेन्चुऐल गोल इस टू राय्ट ऐ ब्राव्स्र इक्स्टेन्शैन, विच transliterates एव्रीथिंग,
-बाट बिफॉर दैट वी नीड ऐ बेऽसिक transliteration लाय्ब्रेरी. ऐन्ड scriptic इस ऐन
+बाट बिफॉर दैट वी नीड ऐ बेऽसिक transliteration लाय्ब्रेरी. ऐन्ड ब्राह्मिक इस ऐन
 एफ्र्ट टैवॉर्ड्स दैट.
 
 
@@ -184,8 +184,8 @@ transliterate Telgu टेक्स्ट्स लाय्क वेब्स�
 ऐन्ड दै प्रॉब्लैम आव "आय कैन नॉट प्रैनाव्न्स इंग्ग्लिश प्रॉप्र्ली" इस नॉट ऐ इंग्ग्लिश
 स्पीकिंग वर्ल्ड प्रॉब्लैम, बाट ऐ प्रॉब्लैम आव पीपैल विद नॉन इंग्ग्लिश ऐस ऐ नेऽटिव
 लैंग्ग्वैज. फॉर देम गूगैल/IPA/Arpabet वूड बी ऐस हॉर्ड ऐस Devnagri, बाट ऐट लीस्ट
-फॉर क्लोस टू बिल्यैन पीपैल, देऽ आल्रेडी नो Devnagri (ऑर Telgu एट्सेट्रै व्र्सैन्स
-आव देम विच दिस प्रॉजेक्ट सैपॉर्ट्स).
+फॉर क्लोस टू बिल्यैन पीपैल, देऽ आल्रेडी नो Devnagri (ऑर साम आदर [Brahmic
+स्क्रिप्ट](http://एन.विकीपीडीऐ.ऑर्ग/विकी/Brahmic_scripts)).
 
 मेऽ बी वर्ल्ड विल नेव्र सैपॉर्ट, मेऽ बी दिस विल ओन्ली मेऽक दै जॉब आव इन्डीऐन्स
 बेट्र, सो वाट, दैट ऐलोन इस ऐ वर्दी गोल.
@@ -195,7 +195,7 @@ transliterate Telgu टेक्स्ट्स लाय्क वेब्स�
 
 क्रैन्ट्ली आय ऐम यूसिंग [cmudict](https://github.कॉम/cmusphinx/cmudict), विच
 लिस्ट्स इंग्ग्लिश pronounciation कोड फॉर साम 40-50K वर्ड्स. आय ऐम [मैपिंग दोस
-कोड्स टू Devnagri](https://github.कॉम/amitu/scriptic/ब्लॉब/मैस्ट्र/सीएम्यू.py#L25-L68).
+कोड्स टू Devnagri](https://github.कॉम/amitu/brahmic/ब्लॉब/मैस्ट्र/सीएम्यू.py#L25-L68).
 
 
 
