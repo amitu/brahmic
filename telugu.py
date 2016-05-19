@@ -46,20 +46,19 @@ REVERSE_CONSONENTS = {
 CONSONENTS = dict((v, k) for k, v in REVERSE_CONSONENTS.items())
 HALF_CONSONENTS = dict(t + '్' for t in CONSONENTS)
 
-VOWELS = {
-    'అ': 'अ',
-    'ఆ': 'आ',
-    'ఇ': 'इ',
-    'ఈ': 'ई',
-    'ఉ': 'उ',
-    'ఊ': 'ऊ',
-    'ఏ': 'ए',
-    'ఐ': 'ऐ',
-    'ఓ': 'ओ',
-    'ఔ': 'औ',
-    'ఆ': 'ऑ',
+REVERSE_VOWELS = {
+    'अ': 'అ',
+    'आ': 'ఆ',
+    'इ': 'ఇ',
+    'ई': 'ఈ',
+    'उ': 'ఉ',
+    'ऊ': 'ఊ',
+    'ए': 'ఎ',
+    'ऐ': 'ఐ',
+    'ओ': 'ఓ',
+    'औ': 'ఔ',
+    'ऑ': 'ఆ',
 }
-REVERSE_VOWELS = dict((v, k) for k, v in VOWELS.items())
 
 VOWELS_MATRA = {
     'అ': '',
@@ -68,13 +67,13 @@ VOWELS_MATRA = {
     'ఈ': 'ీ',
     'ఉ': 'ు',
     'ఊ': 'ూ',
+    'ఎ': 'ె',
     'ఏ': 'ే',
     'ఐ': 'ై',
     'ఓ': 'ో',
     'ఔ': 'ౌ',
-    'ఆ': 'ా',
     'అం': 'ం',
-    'అః': 'కః',
+    'అః': 'ః',
 }
 
 REVERSE_VOWELS_MATRA = {
@@ -84,22 +83,26 @@ REVERSE_VOWELS_MATRA = {
     'ी': 'ీ',
     'ु': 'ు',
     'ू': 'ూ',
-    'े': 'ే',
+    'े': 'ె',
     'ै': 'ై',
-    'ो': 'ో',
+    'ो': 'ొ',
     'ौ': 'ౌ',
     'ॉ': 'ా',
     'ं': 'ం',
-    'ः': 'కః',
+    'ः': 'ః',
 }
 
 DIGITS = '౦౧౨౩౪౫౬౭౮౯'
 
 REVERSE_MAPPING = REVERSE_CONSONENTS
 REVERSE_MAPPING.update(REVERSE_VOWELS)
+REVERSE_MAPPING.update(REVERSE_VOWELS_MATRA)
 
 for i in range(10):
     REVERSE_MAPPING[str(i)] = REVERSE_MAPPING[devnagri.DIGITS[i]] = DIGITS[i]
+
+REVERSE_MAPPING['ऽ'] = 'ఽ'
+REVERSE_MAPPING['्'] = '్'
 
 
 def to_devnagri(text):
@@ -132,7 +135,7 @@ def add_vowel(c, v):
 
 
 def trans_text(text):
-    return from_devnagri(cmu.trans_text(text))
+    return from_devnagri(cmu.trans_text(text, visual=False))
 
 
 def main():

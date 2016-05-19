@@ -104,8 +104,12 @@ def getLastChar(hi):
     return hi[-1], 1
 
 
-def trans(cmu):
-    cmu = "".join(trans_lookup(m) for m in cmu.split())
+def get_hi_phone(hi):
+    return "".join(trans_lookup(m) for m in hi.split())
+
+
+def trans(cmu, visual=True):
+    cmu = get_hi_phone(cmu)
     hi = []
     for i in range(len(cmu)):
         l = trans_lookup(cmu[i])
@@ -118,17 +122,17 @@ def trans(cmu):
         else:
             hi.append(l)
     hi = "".join(hi)
-    if hi[-1] == "्":
+    if visual and hi[-1] == "्":
         hi = hi[:-1]
     return hi
 
 
-def trans_text(text):
+def trans_text(text, visual=True):
     def replacer(match):
         match = match.group()
         if match[0] in WORDY:
             cmu = lookup(match.lower())
-            candidate = trans(cmu)
+            candidate = trans(cmu, visual=visual)
             if candidate != "unknown":
                 match = candidate
         return match
