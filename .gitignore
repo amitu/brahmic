@@ -2,7 +2,9 @@
 *.o
 *.a
 *.so
+*.py[co]
 
+.idea
 # Folders
 _obj
 _test
